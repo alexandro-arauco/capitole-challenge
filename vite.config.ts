@@ -5,11 +5,7 @@ import { resolve } from 'node:path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [TanStackRouterVite({ autoCodeSplitting: true }), viteReact()],
-  test: {
-    globals: true,
-    environment: 'jsdom',
-  },
+  plugins: [TanStackRouterVite({ autoCodeSplitting: true }), viteReact()],  
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
