@@ -16,9 +16,7 @@ function App() {
   return (
     <section>
       {genres.map((genre: Genre) => (
-        <div style={{ marginLeft: "1rem", marginRight: "1rem" }}>
-          <FilmList genre={genre} />
-        </div>
+        <FilmList key={genre.id} genre={genre} />
       ))}
     </section>
   );
