@@ -1,24 +1,25 @@
 import { useEffect, useState } from "react";
-import type { Result } from "../interfaces/Film";
-import { fetchFilmsByGenre } from "../utils/fetchFilmsByGenre";
-import Carousel from "./Carousel";
+import type { Genre, Result } from "../interfaces/Film";
 import FilmItem from "./FilmItem/FilmItem";
+import Carousel from "./Carousel/Carousel";
+import { fetchFilmsByGenre } from "../utils/fetchFilm";
 
 interface FilmProps {
-  genreId: number;
+  genre: Genre;
 }
 
-export default function FilmList({ genreId }: FilmProps) {
+export default function FilmList({ genre }: FilmProps) {
+  const { id, name } = genre;
   const [films, setFilms] = useState<Result[]>([]);
 
   useEffect(() => {
-    fetchFilmsByGenre(genreId).then((data) => {
+    fetchFilmsByGenre(id).then((data) => {
       setFilms(data.results);
     });
   }, []);
 
   return (
-    <Carousel>
+    <Carousel title={name}>
       {films && films.map((film) => <FilmItem key={film.id} film={film} />)}
     </Carousel>
   );

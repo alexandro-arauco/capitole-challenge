@@ -56,7 +56,6 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 });
 
 function RootComponent() {
-  console.log("here");
   return (
     <html lang="en">
       <head>

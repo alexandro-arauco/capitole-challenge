@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import "../../components/FilmItem/FilmItem.scss";
 import NotFound from "../../components/NotFound/NotFound";
 import { wishlistService } from "../../services/wishlist";
-import { fetchFilmDetail } from "../../utils/fetchFilmDetail";
+import { fetchFilmDetail } from "../../utils/fetchFilm";
 
 export const Route = createFileRoute("/detail/$id")({
   component: RouteComponent,
