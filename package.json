@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@tanstack/react-router": "^1.129.0",
+    "@tanstack/react-start": "^1.129.0",
     "@tanstack/router-plugin": "^1.129.0",
     "axios": "^1.10.0",
     "compression": "^1.7.5",
