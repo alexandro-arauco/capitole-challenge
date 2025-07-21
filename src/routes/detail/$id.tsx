@@ -1,10 +1,10 @@
-import { Card } from "@/components/Card";
-import { fetchFilmDetail } from "@/utils/fetchFilmDetail";
 import { createFileRoute, useLoaderData } from "@tanstack/react-router";
-import "../../styles/Detail.scss";
-import { wishlistService } from "@/services/wishlist";
 import { useState } from "react";
 import { toast } from "sonner";
+import { Card } from "../../components/Card";
+import { wishlistService } from "../../services/wishlist";
+import "../../styles/Detail.scss";
+import { fetchFilmDetail } from "../../utils/fetchFilmDetail";
 
 export const Route = createFileRoute("/detail/$id")({
   component: RouteComponent,

@@ -7,6 +7,9 @@ type WishlistItem = Pick<FilmDetail, "id" | "title" | "poster_path">;
 export const wishlistService = {
   getWishlist(): WishlistItem[] {
     try {
+      if (typeof window === "undefined") {
+        return [];
+      }
       const saved = localStorage.getItem(WISHLIST_KEY);
       return saved ? JSON.parse(saved) : [];
     } catch (error) {
@@ -37,6 +40,10 @@ export const wishlistService = {
 
   removeFromWishlist(movieId: number): void {
     try {
+      if (typeof window === "undefined") {
+        return;
+      }
+      
       const wishlist = this.getWishlist();
       const filtered = wishlist.filter((item) => item.id !== movieId);
       localStorage.setItem(WISHLIST_KEY, JSON.stringify(filtered));

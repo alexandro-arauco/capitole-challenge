@@ -1,8 +1,8 @@
-import { fetchFilmsByGenre } from "@/utils/fetchFilmsByGenre";
 import { useEffect, useState } from "react";
-import FilmItem from "./FilmItem";
+import type { Result } from "../interfaces/Film";
+import { fetchFilmsByGenre } from "../utils/fetchFilmsByGenre";
 import Carousel from "./Carousel";
-import type { Result } from "@/interfaces/Film";
+import FilmItem from "./FilmItem";
 
 interface FilmProps {
   genreId: number;

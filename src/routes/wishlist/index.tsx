@@ -1,9 +1,9 @@
-import { Card } from "@/components/Card";
-import { wishlistService } from "@/services/wishlist";
+import { wishlistService } from "../../services/wishlist";
 import { createFileRoute, Link, useLoaderData } from "@tanstack/react-router";
 import { useState } from "react";
 import "../../styles/Wishlist.scss";
 import { toast } from "sonner";
+import { Card } from "../../components/Card";
 
 export const Route = createFileRoute("/wishlist/")({
   component: RouteComponent,
