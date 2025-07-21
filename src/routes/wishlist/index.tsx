@@ -1,13 +1,14 @@
-import { wishlistService } from "../../services/wishlist";
 import { createFileRoute, Link, useLoaderData } from "@tanstack/react-router";
 import { useState } from "react";
-import "../../styles/Wishlist.scss";
 import { toast } from "sonner";
 import { Card } from "../../components/Card";
+import { wishlistService } from "../../services/wishlist";
+import "../../styles/FilmItem.scss";
 
 export const Route = createFileRoute("/wishlist/")({
   component: RouteComponent,
   loader: () => wishlistService.getWishlist(),
+  ssr: false,
 });
 
 function RouteComponent() {
@@ -24,8 +25,8 @@ function RouteComponent() {
     <div className="wishlist-grid">
       {wishList &&
         wishList.map((item) => (
-          <Card key={item.id} title="">
-            <div className="wishlist-card-content">
+          <Card key={item.id} title={item.title}>
+            <div className="wishlist-img-btn-group">
               <Link to="/detail/$id" params={{ id: item.id.toString() }}>
                 <img
                   className="wishlist-card-img"
@@ -33,12 +34,14 @@ function RouteComponent() {
                   alt={item.title}
                 />
               </Link>
-              <button
-                className="wishlist-remove-btn"
-                onClick={() => handleRemove(item.id)}
-              >
-                Remove from Wishlist
-              </button>
+              <div className="wishlist-card-actions">
+                <button
+                  className="wishlist-remove-btn fluent-btn"
+                  onClick={() => handleRemove(item.id)}
+                >
+                  <span className="fluent-btn-text">Remove from Wishlist</span>
+                </button>
+              </div>
             </div>
           </Card>
         ))}

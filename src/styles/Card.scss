@@ -1,15 +1,12 @@
 .card {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   padding: 1.5rem;
   margin: 1rem 0;
-  transition: box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
   
-  &:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  }
-
   .card-header {
     display: flex;
     align-items: center;
@@ -17,20 +14,72 @@
     margin-bottom: 1rem;
 
     h3 {
+      flex: 1 1 auto;
+      margin: 0;
       font-size: 1.25rem;
       font-weight: 600;
-      margin: 0;
-      color: #222;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 0;
     }
 
     .card-actions {
-      display: flex;
-      gap: 0.5rem;
+      margin-left: 1rem;
+      flex-shrink: 0;
     }
   }
 
   .card-content {
-    font-size: 1rem;
-    color: #444;
+    flex: 1 1 auto;
   }
+} 
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(255,255,255,0.8);
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: background 0.2s;
+}
+
+.carousel-btn.left {
+  left: 0.5rem;
+}
+
+.carousel-btn.right {
+  right: 0.5rem;
+}
+
+.carousel-btn:hover {
+  background: #eee;
+} 

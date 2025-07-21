@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import "../styles/Carousel.scss";
 
 interface CarouselProps {
   children: React.ReactNode;

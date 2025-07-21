@@ -16,17 +16,13 @@ function App() {
 
   return (
     <section>
-      <ul>
-        {Array.isArray(genres) ? (
-          genres.map((genre: Genre) => (
-            <Card key={genre.id} title={genre.name}>
-              <FilmList genreId={genre.id} />
-            </Card>
-          ))
-        ) : (
-          <li>No genres found.</li>
-        )}
-      </ul>
+      {genres.map((genre: Genre) => (
+        <div style={{ marginLeft: "1rem", marginRight: "1rem" }}>
+          <Card key={genre.id} title={genre.name}>
+            <FilmList genreId={genre.id} />
+          </Card>
+        </div>
+      ))}
     </section>
   );
 }
