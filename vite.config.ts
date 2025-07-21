@@ -46,7 +46,7 @@ const clientBuildConfig: BuildEnvironmentOptions = {
 export default defineConfig((configEnv) => {
   return {
     plugins: [
-      tanstackStart({ target: 'vercel' }),
+      //tanstackStart({ target: 'vercel' }),
       tanstackRouter({ target: "react", autoCodeSplitting: true }),
       react(),
     ],
