@@ -1,7 +1,7 @@
 import type { Result } from "@/interfaces/Film";
-import { Card } from "./Card";
 import { Link } from "@tanstack/react-router";
-import "../styles/FilmItem.scss";
+import { Card } from "../Card/Card";
+import "../FilmItem/FilmItem.scss";
 
 interface FilmProps {
   film: Result;

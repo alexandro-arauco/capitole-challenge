@@ -1,13 +1,15 @@
 import { createFileRoute, useLoaderData } from "@tanstack/react-router";
 import { useState } from "react";
 import { toast } from "sonner";
+import "../../components/FilmItem/FilmItem.scss";
+import NotFound from "../../components/NotFound/NotFound";
 import { wishlistService } from "../../services/wishlist";
-import "../../styles/FilmItem.scss";
 import { fetchFilmDetail } from "../../utils/fetchFilmDetail";
 
 export const Route = createFileRoute("/detail/$id")({
   component: RouteComponent,
   loader: ({ params }) => fetchFilmDetail(Number(params.id)),
+  errorComponent: NotFound,
 });
 
 function RouteComponent() {
@@ -37,7 +39,11 @@ function RouteComponent() {
   };
 
   return (
-    <div className={`detail-container genre-${response.genres[0]?.name.toLowerCase().replace(/\s/g, '-')}`}>
+    <div
+      className={`detail-container genre-${response.genres[0]?.name
+        .toLowerCase()
+        .replace(/\s/g, "-")}`}
+    >
       <div className="detail-image-section">
         <img
           className="detail-image"

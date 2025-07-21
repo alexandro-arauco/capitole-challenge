@@ -1,4 +1,4 @@
-import '../styles/Card.scss';
+import '../Card/Card.scss';
 
 interface CardProps {
   title: string;

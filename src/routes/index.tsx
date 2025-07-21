@@ -1,4 +1,4 @@
-import { Card } from "../components/Card";
+import { Card } from "../components/Card/Card";
 import FilmList from "../components/FilmList";
 import type { Genre } from "../interfaces/Genres";
 import { fetchGenres } from "../utils/fetchGenres";

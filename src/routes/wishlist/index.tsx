@@ -1,9 +1,9 @@
 import { createFileRoute, Link, useLoaderData } from "@tanstack/react-router";
 import { useState } from "react";
 import { toast } from "sonner";
-import { Card } from "../../components/Card";
+import { Card } from "../../components/Card/Card";
 import { wishlistService } from "../../services/wishlist";
-import "../../styles/FilmItem.scss";
+import "../../components/FilmItem/FilmItem.scss";
 
 export const Route = createFileRoute("/wishlist/")({
   component: RouteComponent,

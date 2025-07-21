@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import type { Result } from "../interfaces/Film";
 import { fetchFilmsByGenre } from "../utils/fetchFilmsByGenre";
 import Carousel from "./Carousel";
-import FilmItem from "./FilmItem";
+import FilmItem from "./FilmItem/FilmItem";
 
 interface FilmProps {
   genreId: number;

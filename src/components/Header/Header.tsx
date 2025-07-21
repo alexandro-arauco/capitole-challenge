@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import "../styles/Header.scss";
+import "../Header/Header.scss";
 
 export default function Header() {
   return (
