@@ -62,7 +62,7 @@ function RootComponent() {
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body style={{ backgroundColor: "black" }}>
         <Header />
         <Toaster richColors />
         <Outlet /> {/* Start rendering router matches */}
